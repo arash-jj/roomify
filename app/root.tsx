@@ -6,9 +6,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import "./app.css";
 
 import type { Route } from "./+types/root";
-import "./app.css";
 import { useEffect, useState } from "react";
 import {
     getCurrentUser,

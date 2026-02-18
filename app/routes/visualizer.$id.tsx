@@ -151,15 +151,15 @@ const VisualizerId = () => {
                         <div className="hint">Drag to compare</div>
                     </div>
                     <div className="compare-stage">
-                        {project?.sourceImage && currentImage ? (
+                        {project?.sourceImage && (currentImage || project?.renderedImage) ? (
                             <ReactCompareSlider
                                 defaultValue={50}
                                 style={{ width: '100%', height: 'auto' }}
                                 itemOne={
-                                    <ReactCompareSliderImage src={project?.sourceImage} alt="before" className="compare-img" />
+                                    <ReactCompareSliderImage src={project.sourceImage} alt="before" className="compare-img" />
                                 }
                                 itemTwo={
-                                    <ReactCompareSliderImage src={currentImage || project?.renderedImage} alt="after" className="compare-img" />
+                                    <ReactCompareSliderImage src={currentImage || project.renderedImage || ''} alt="after" className="compare-img" />
                                 }
                             />
                         ) : (
